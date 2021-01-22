@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Etilank.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Etilank&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">etilank</a> &gt; <span class="el_source">Etilank.java</span></div><h1>Etilank.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package etilank;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author acer
+ */
+<span class="fc" id="L15">public class Etilank {</span>
+
+<span class="fc" id="L17">    public static ArrayList&lt;Data&gt; list = new ArrayList&lt;&gt;();</span>
+    
+    public static String email (String email){
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if (email.equals(&quot;admin&quot;)) {</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">        } else if (!email.equals(&quot;admin&quot;)) {</span>
+<span class="nc" id="L22">            System.out.println(&quot;Gagal login&quot;);</span>
+<span class="nc" id="L23">            System.exit(0);</span>
+        }
+<span class="fc" id="L25">        return email;</span>
+    }
+    
+    public static String password(String pass){
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (pass.equals(&quot;Iptu.Saturo&quot;)) {</span>
+<span class="fc" id="L30">            System.out.println(&quot;&quot;);</span>
+<span class="fc" id="L31">            System.out.println(&quot;--Selamat Datang Iptu--&quot;);</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        } else if (!pass.equals(&quot;Pakpol&quot;)) {</span>
+<span class="nc" id="L33">            System.out.println(&quot;Gagal login&quot;);</span>
+<span class="nc" id="L34">            System.exit(0);</span>
+        }
+<span class="fc" id="L36">        return pass;</span>
+    }
+    public static String inputData(){
+        String nKendaraan, pelanggaran, nama, tanggal, MeTode, type, noRek;
+        int pilihan, nominal;
+        
+<span class="nc" id="L42">        Scanner sc = new Scanner (System.in);</span>
+        
+<span class="nc" id="L44">        System.out.println(&quot;===============================&quot;);</span>
+<span class="nc" id="L45">        System.out.println(&quot;Silahkan Isi data dibawah ini&quot;);</span>
+<span class="nc" id="L46">        System.out.println(&quot;Tipe Pelanggaran yang anda lakukan&quot;);</span>
+<span class="nc" id="L47">        System.out.println(&quot;1.Tidak Memakai helm (RP.500.000)&quot;);</span>
+<span class="nc" id="L48">        System.out.println(&quot;2.Tidak membawa surat-surat (RP.250.000)&quot;);</span>
+<span class="nc" id="L49">        System.out.println(&quot;3.telat bayar pajak(RP.760.000)&quot;);</span>
+<span class="nc" id="L50">        System.out.println(&quot;Masukan Nominal Denda yang anda lakukan&quot;);</span>
+<span class="nc" id="L51">        pilihan = sc.nextInt();</span>
+        
+<span class="nc" id="L53">        nominal = 0;</span>
+<span class="nc" id="L54">        type = &quot;error&quot;;</span>
+<span class="nc bnc" id="L55" title="All 4 branches missed.">        switch (pilihan){</span>
+            case 1:
+<span class="nc" id="L57">                type = &quot;Tidak Memakai Helm&quot;;</span>
+<span class="nc" id="L58">                nominal = 500000;</span>
+<span class="nc" id="L59">                break;</span>
+            case 2:
+<span class="nc" id="L61">                type = &quot;Tidak Membawa surat-surat&quot;;</span>
+<span class="nc" id="L62">                nominal = 250000;</span>
+<span class="nc" id="L63">                break;</span>
+            case 3:
+<span class="nc" id="L65">                type = &quot;Telat Bayar Pajak&quot;;</span>
+<span class="nc" id="L66">                nominal = 750000;</span>
+<span class="nc" id="L67">                break;</span>
+            default:
+<span class="nc" id="L69">                System.out.println(&quot;Mohon Masukan Pelanggaran Dengan Benar Atau Anda Mendapatkan Denda&quot;);</span>
+<span class="nc" id="L70">                inputData();</span>
+                break;
+        }
+        
+        
+<span class="nc" id="L75">        System.out.println(&quot;Masukan Nama Anda&quot;);</span>
+<span class="nc" id="L76">        nama = &quot;NM&quot; + sc.nextLine();</span>
+        
+<span class="nc" id="L78">        System.out.println(&quot;Tanggal Anda Ditilank&quot;);</span>
+<span class="nc" id="L79">        tanggal = &quot;TGL&quot; + sc.nextLine();</span>
+        
+<span class="nc" id="L81">        System.out.println(&quot;Masukan Nomor Kendaraan anda&quot;);</span>
+<span class="nc" id="L82">        nKendaraan = &quot;NKR&quot; + sc.nextLine();</span>
+        
+<span class="nc" id="L84">        System.out.println(&quot;Masukan Metode Pembayaran Anda&quot;);</span>
+<span class="nc" id="L85">        MeTode = &quot;MT&quot; + sc.nextLine();</span>
+        
+<span class="nc" id="L87">        System.out.println(&quot;Masukan No Rek anda&quot;);</span>
+<span class="nc" id="L88">        noRek = &quot;NRK&quot; + sc.nextLine();</span>
+        
+<span class="nc" id="L90">        Etilank et = new Etilank();</span>
+<span class="nc" id="L91">        et.addValues(nKendaraan, nama, tanggal, MeTode, type, noRek, pilihan, nominal);</span>
+<span class="nc" id="L92">        return &quot;inputData&quot;;</span>
+    }
+
+    
+    private void addValues(String nKendaraan, String nama, String tanggal, String MeTode, String type, String noRek, int pilihan, int nominal) {
+<span class="nc" id="L97">     list.add(new Data(nKendaraan, nama ,tanggal ,MeTode, type, noRek, pilihan, nominal ));</span>
+<span class="nc" id="L98">     printValues(list);</span>
+<span class="nc" id="L99">    }</span>
+    class Data{
+        String nKendaraan; 
+        String pelanggaran;
+        String nama;
+        String tanggal;
+        String MeTode;
+        String type;
+        String noRek;
+        
+        int pilihan;
+        int nominal;
+        
+<span class="nc" id="L112">        public Data(String nKendaraan, String nama, String MeTode,String tanggal, String type, String noRek, int pilihan, int nominal){</span>
+<span class="nc" id="L113">            this.nKendaraan = nKendaraan;</span>
+<span class="nc" id="L114">            this.nama = nama;</span>
+<span class="nc" id="L115">            this.MeTode = MeTode;</span>
+<span class="nc" id="L116">            this.tanggal = tanggal;</span>
+<span class="nc" id="L117">            this.type = type;</span>
+<span class="nc" id="L118">            this.noRek = noRek;</span>
+<span class="nc" id="L119">            this.pilihan = pilihan;</span>
+<span class="nc" id="L120">            this.nominal = nominal;</span>
+        
+<span class="nc" id="L122">        }</span>
+       
+    }
+    
+    public static void menuUtama(){
+        
+        int pilihan;
+        
+<span class="nc" id="L130">        Etilank et =  new Etilank();</span>
+<span class="nc" id="L131">        Scanner sc =  new Scanner(System.in);</span>
+<span class="nc" id="L132">        System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L133">        System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L134">        System.out.println(&quot;===========================&quot;);</span>
+<span class="nc" id="L135">        System.out.println(&quot;Selamat Datang Di Aplikasi Pembayar E-tilank&quot;);</span>
+<span class="nc" id="L136">        System.out.println(&quot;Silahkan Pilih Menu di bawah ini&quot;);</span>
+<span class="nc" id="L137">        System.out.println(&quot;1. Masukan Data&quot;);</span>
+<span class="nc" id="L138">        System.out.println(&quot;2. Lihat Database&quot;);</span>
+<span class="nc" id="L139">        System.out.println(&quot;3. Menghitung Denda&quot;);</span>
+<span class="nc" id="L140">        System.out.println(&quot;4. Keluar&quot;);</span>
+<span class="nc" id="L141">        System.out.println(&quot;Masukan Angka Menu Untuk Memilih&quot;);</span>
+<span class="nc" id="L142">        pilihan = sc.nextInt();</span>
+        
+<span class="nc bnc" id="L144" title="All 5 branches missed.">        switch (pilihan){</span>
+            case 1:
+<span class="nc" id="L146">                inputData();</span>
+<span class="nc" id="L147">                break;</span>
+            case 2:
+<span class="nc" id="L149">                et.printValues(list);</span>
+<span class="nc" id="L150">                break;</span>
+            case 3:
+<span class="nc" id="L152">                kalkulator();</span>
+<span class="nc" id="L153">                break;</span>
+            case 4:
+<span class="nc" id="L155">                System.exit(0);</span>
+                break;
+        }
+<span class="nc" id="L158">    }</span>
+    
+    public static void kalkulator(){
+        int pilih , pilihan , nilai1, nilai2;
+        double hasil;
+        
+<span class="nc" id="L164">        Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L165">        System.out.println(&quot;Kalkulator Menghitung Denda&quot;);</span>
+<span class="nc" id="L166">        System.out.println(&quot;1. Penjumlahan&quot;);</span>
+<span class="nc" id="L167">        System.out.println(&quot;2. Pengurangan&quot;);</span>
+<span class="nc" id="L168">        System.out.println(&quot;3. Perkalian&quot;);</span>
+<span class="nc" id="L169">        System.out.println(&quot;4. Pembagian&quot;);</span>
+<span class="nc" id="L170">        System.out.println(&quot;Masukan Pilihan Anda&quot;);</span>
+<span class="nc" id="L171">        pilih = sc.nextInt();</span>
+        
+<span class="nc" id="L173">        System.out.println(&quot;Masukan Angka Pertama : &quot;);</span>
+<span class="nc" id="L174">        nilai1 = sc.nextInt();</span>
+<span class="nc" id="L175">        System.out.println(&quot;Masukan Angka Kedua : &quot;);</span>
+<span class="nc" id="L176">        nilai2 = sc.nextInt();</span>
+        
+<span class="nc bnc" id="L178" title="All 5 branches missed.">        switch(pilih){</span>
+            case 1:
+<span class="nc" id="L180">                hasil = nilai1 + nilai2;</span>
+<span class="nc" id="L181">                System.out.println(&quot;Hasilnya Adalah = &quot; +hasil);</span>
+<span class="nc" id="L182">                break;</span>
+            case 2:
+<span class="nc" id="L184">                hasil = nilai1 - nilai2;</span>
+<span class="nc" id="L185">                System.out.println(&quot;Hasilnya Adalah = &quot; +hasil);</span>
+<span class="nc" id="L186">                    break;</span>
+                
+            case 3:
+<span class="nc" id="L189">                hasil = nilai1 * nilai2;</span>
+<span class="nc" id="L190">                System.out.println(&quot;Hasilnya Adalah = &quot; +hasil);</span>
+<span class="nc" id="L191">                break;</span>
+            case 4:
+<span class="nc" id="L193">                hasil = nilai1 / nilai2;</span>
+<span class="nc" id="L194">                System.out.println(&quot;Hasilnya Adalah = &quot; +hasil);</span>
+                break;    
+            
+            }
+        String Pilihan;
+<span class="nc" id="L199">        Pilihan = sc.nextLine();</span>
+        
+<span class="nc bnc" id="L201" title="All 6 branches missed.">        switch (Pilihan){</span>
+            case &quot;&quot;:
+<span class="nc" id="L203">                menuUtama();</span>
+<span class="nc" id="L204">                break;</span>
+            default:
+    }
+<span class="nc" id="L207">    }</span>
+    
+    public void printValues(ArrayList&lt;Data&gt; list){
+        
+<span class="nc" id="L211">        System.out.println(&quot;==============================&quot;);</span>
+<span class="nc" id="L212">        System.out.println(&quot;Data Base Polri&quot;);</span>
+        
+<span class="nc" id="L214">        System.out.println(&quot;No.Kendaraan / Nama Saudara / Pelanggaran / Metode Pembayaran / No.Rekening Saudara / Nominal Yang harus dibayar kan  &quot;);</span>
+        
+<span class="nc bnc" id="L216" title="All 2 branches missed.">        for(int i = 0; i &lt; list.size(); i++){</span>
+<span class="nc" id="L217">            Data data = list.get(i);</span>
+<span class="nc" id="L218">            System.out.println(data.nKendaraan + &quot;  /&quot;+ data.nama+&quot;  /&quot;+&quot;  /&quot;+data.type+&quot;  /&quot;+data.MeTode+&quot;  /&quot;+data.noRek+&quot;  /&quot;+data.nominal+&quot;  /&quot;+data.tanggal);</span>
+        }
+        
+<span class="nc" id="L221">        System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L222">        System.out.println(&quot;&quot;);</span>
+<span class="nc" id="L223">        System.out.println(&quot;Klik Enter Untuk Kembali ke menu Utama&quot;);</span>
+        String Pilihan;
+        
+<span class="nc" id="L226">        Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L227">        Pilihan = sc.nextLine();</span>
+        
+<span class="nc bnc" id="L229" title="All 6 branches missed.">        switch (Pilihan){</span>
+            case &quot;&quot;:
+<span class="nc" id="L231">                menuUtama();</span>
+<span class="nc" id="L232">                break;</span>
+            default:
+<span class="nc" id="L234">                printValues(list);</span>
+        }
+        
+        
+<span class="nc" id="L238">    }</span>
+    
+    public static void main(String[] args) {
+        String username, pass;
+        
+<span class="nc" id="L243">        Etilank et = new Etilank();</span>
+<span class="nc" id="L244">        Scanner sc =  new Scanner(System.in);</span>
+        
+<span class="nc" id="L246">        System.out.println(&quot;Enter Your ID: &quot;);</span>
+<span class="nc" id="L247">        username = sc.nextLine();</span>
+<span class="nc" id="L248">        et.email(username);</span>
+        
+<span class="nc" id="L250">        System.out.println(&quot;Enter your Password&quot;);</span>
+<span class="nc" id="L251">        pass = sc.nextLine();</span>
+<span class="nc" id="L252">        et.password(pass);</span>
+        
+<span class="nc" id="L254">        menuUtama();</span>
+<span class="nc" id="L255">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
